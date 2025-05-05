@@ -1,3 +1,5 @@
+
+
 import requests
 import time
 
@@ -21,11 +23,11 @@ def get_coordinates(place, username=geonames_username, fuzzy=0, timeout=1):
 place = []
 
 # reads the tsv file
-with open("/content/ner_counts.tsv", 'r', encoding="utf-8") as file:
+with open("C:/Users/aienullah.beg/Downloads/FASDH25-portfolio2/ner_counts.tsv", 'r', encoding="utf-8") as file:
     lines = file.readlines()
 
 header = lines[0].strip().split('\t')
-place_index = header.index('placename')
+place_index = header.index('Place')
 
 # loop through the rest of lines
 for line in lines[1:]:
@@ -51,3 +53,6 @@ with open(filename, 'w', encoding="utf-8") as file:
         file.write(f"{row['Place']}\t{row['Latitude']}\t{row['Longitude']}\n")
 
 print("Coordinates written to NER_gazetteer.tsv")
+
+from google.colab import files
+uploaded = files.upload()
