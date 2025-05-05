@@ -80,10 +80,10 @@ for row in rows[1:]:
 
 
 # building dictionary which stores how many times each place name was mentioned per month 
-mentions_per_month = {}
+mentions_per_month = {} # help from ChatGPT solution 2
 
 # setting the starting date of the war in Gaza to filter articles
-war_start_date = "2023-10-07"
+war_start_date = "2023-10-07" # help from ChatGPT, Solution 3
 
 # loop through each file in the folder to check for place name mentions:
 for filename in os.listdir(folder):
@@ -107,7 +107,7 @@ for filename in os.listdir(folder):
     # loop through each place to search for matches in the text:
     for place in patterns:
         pattern = patterns[place]["pattern"] # get regex pattern for current place 
-        matches = re.findall(pattern, text, re.IGNORECASE) # find all mentions, ignoring case 
+        matches = re.findall(pattern, text, re.IGNORECASE) # find all mentions, ignoring case # help from ChatGPT Solution 1
         count = len(matches) # total mentions of the place in this article
         
         # add the number of times the place was found to the total frequency:
