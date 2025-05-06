@@ -1,3 +1,6 @@
+#most of the code here (apart from mentioned where some AI is used) is from Gaza-NER_ali_hasnain.ipynb in shared google drive folder.
+
+
 import requests   #makes API requsts
 import time    #adds delays between requests
 
@@ -29,14 +32,14 @@ place_index = header.index('Place')  #Find index of "Place" column
 #loop through the remaining lines
 for line in lines[1:]:  #Loop through data lines
     columns = line.strip().split('\t')  #Split line by tabs
-    if len(columns) > place_index:   #Check if place column exists
+    if len(columns) > place_index:   #Check if place column exists (some help taken from AI)
         place.append(columns[place_index])  #Add place to list
 
-# Go through each place name and get coordinates
+# Go through each place name and get coordinates 
 coordinates_data = []  #list to store coordinates data
 for place_name in place:  #Loop through place names
     coordinates = get_coordinates(place_name) #Get coordinates
-    coordinates_data.append({'Place': place_name, 'Latitude': coordinates['latitude'], 'Longitude': coordinates['longitude']})   #Add the result to the list
+    coordinates_data.append({'Place': place_name, 'Latitude': coordinates['latitude'], 'Longitude': coordinates['longitude']})   #Add the result to the list(AI solution + code from drive)
   
     print(f"{place_name}: {coordinates['latitude']}, {coordinates['longitude']}")  #Print coordinates
 
