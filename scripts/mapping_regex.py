@@ -1,11 +1,11 @@
-# Import required libraries
+# Import required libraries                      #codes taken from slide 10.1
 import pandas as pd  # For data manipulation
 import plotly.express as px  # For interactive visualizations
 import kaleido  # For saving static images
 
 # Load the gazetteer file with coordinates of places
 coordinates_path = "../gazetteers/geonames_gaza_selection.tsv"
-coordinates_df = pd.read_csv(coordinates_path, sep="\t")
+coordinates_df = pd.read_csv(coordinates_path, sep="\t") #codes taken from 10.1
 
 # Load regex counts per place per month
 counts_path = "../outputs/regex_counts.tsv"
@@ -57,7 +57,7 @@ fig.show()
 fig.write_html("regex_map.html")
 
 
-# 2. Create the static map (snapshot of the latest month) using the same data but without animation
+# 2. Create the static map (snapshot of the latest month) using the same data but without animation   #code help taken from slide 10.1
 fig_static = px.scatter_map(merge_df, 
                             lat="latitude", 
                             lon="longitude", 
