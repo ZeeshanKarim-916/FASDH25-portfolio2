@@ -1,7 +1,7 @@
 import requests   #makes API requsts
 import time    #adds delays between requests
 
-geonames_username = "alihasnain"  # my Geonames API username
+geonames_username = "alihasnain"  #my Geonames API username
 
 def get_coordinates(place, username=geonames_username, fuzzy=0, timeout=1):
     """This function gets a single set of coordinates from the geonames API."""
