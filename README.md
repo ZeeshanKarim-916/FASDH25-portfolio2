@@ -35,8 +35,6 @@ FASDH25-portfolio2/
 │   ├── regex.map.png                 # Static image map of regex results
 │   ├── NER.map.html                  # Interactive map of NER results
 │   └── NER.map.png                   # Static image map of NER results
-|
-├── .gitignore                        # Git ignore file to exclude unnecessary files
 └── readme.md                         # Project documentation (this file)
 
 ## Fork and Clone the Portfolio Folder
@@ -131,10 +129,10 @@ with columns: `placename` | `count`.
 Downloaded the final notebook as a `.ipynb` file and added it to our repository.
 
 
-### Task 3: Create a gazetteer for the NER places
-#### Geocoding Place Names from NER Output
+## Task 3: Create a gazetteer for the NER places
+### Geocoding Place Names from NER Output
 This section of the project involved geocoding place names extracted using Named Entity Recognition (NER). The goal was to create a gazetteer file (`NER_gazetteer.tsv`) containing latitude and longitude coordinates for each place name found in the `ner_counts.tsv` file. Where no coordinates could be found through automated means, they were manually added.
-#### Script Description
+### Script Description
 The script (`build_gazetteer.py`) performs the following tasks:
 	Reads the `ner_counts.tsv` file and extracts all place names.
 	Uses the GeoNames API to retrieve latitude and longitude coordinates.
@@ -142,7 +140,7 @@ The script (`build_gazetteer.py`) performs the following tasks:
 	These NA values were then manually checked and coordinates were added manually using Google.
 	The final gazetteer file is saved as `NER_gazetteer.tsv` inside the `gazetteer/` folder.
 
-#### Place Names with Manually Added Coordinates
+### Place Names with Manually Added Coordinates
 The following place names could not be resolved automatically and required manual coordinate lookup:
 •	alDabshah
 •	alTawil
@@ -216,7 +214,7 @@ The following place names could not be resolved automatically and required manua
 •	alJiftli
 •	alShifa
 •	Rawaa
-#### Note on Filtering Non-Place Names
+### Note on Filtering Non-Place Names
 Some names in the `ner_counts.tsv` file were not valid place names (e.g., organizations, people, events, or hashtags). These were removed during the manual filtering process using spreadsheet filter options. Examples include: Africa4Palestine, Netanyahu, QFFD, October7, etc.
 
 ## Task 4A: Mapping Regex-Extracted Place Names
